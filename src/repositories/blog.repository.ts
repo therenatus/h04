@@ -25,7 +25,7 @@ export class BlogRepository {
   }
 
   async updateOne(id: string, body: any): Promise<boolean> {
-    const {matchedCount} = await blogCollection.updateOne({ id }, { $set: { body }});
+    const {matchedCount} = await blogCollection.updateOne({ id }, { $set: body });
     if(matchedCount === 0){
       return false
     }

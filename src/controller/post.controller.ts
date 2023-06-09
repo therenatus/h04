@@ -50,7 +50,7 @@ router.put('/:id',CreatePostValidator(), InputValidationMiddleware, async(req: R
   if(!post){
     return res.status(404).send();
   }
-  return res.status(204).send(post);
+  res.status(204).send(post);
 });
 
 router.delete('/:id',AuthMiddleware, async(req: Request, res: Response) => {
