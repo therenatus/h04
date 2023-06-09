@@ -2,6 +2,7 @@ import {IQuery} from "../types/query.interface";
 import {TResponseWithData} from "../types/respone-with-data.type";
 import {Collection, Document, WithId} from "mongodb";
 
+//@ts-ignore
 export async function FindAllWithCount<T>(query: IQuery, collection: Collection<T>, id: string | null): Promise<TResponseWithData<WithId<T>[], number, 'data', 'totalCount'>> {
   const {term, sortBy, pageSize, pageNumber} = query;
 
