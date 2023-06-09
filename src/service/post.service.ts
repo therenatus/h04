@@ -36,11 +36,12 @@ export class PostService {
     }
     body.blogName = blog.name;
     body.createdAt = date;
+    body.blogId = blog.id;
     body.id = id ? id : (+date).toString();
     return await Repository.create(body);
   }
 
-  async update(id: string, body: any): Promise<boolean>{
+  async update(id: string, body: any): Promise<IPost | boolean>{
     return await Repository.update(id, body);
   }
 

@@ -3,15 +3,18 @@ import {IQuery} from "../types/query.interface";
 import {TResponseWithData} from "../types/respone-with-data.type";
 import {FindAllWithCount} from "../helpers/findAllWithCount";
 import {IPost} from "../types/post.interface";
-import {WithId} from "mongodb";
+import {ObjectId, WithId} from "mongodb";
 
 export class PostRepository {
   async find(query: IQuery): Promise<TResponseWithData<WithId<IPost>[], number, 'data', 'totalCount'>> {
     return await FindAllWithCount<IPost>(query, postCollection, null)
   }
 
-  async findOne(id: string): Promise<IPost | null> {
-    return await postCollection.findOne({ id: id});
+  async findOne(id: string | ObjectId): Promise<IPost | null> {
+    let findBy: any
+    ObjectId.isValid(id) ? findBy = {_id: new ObjectId(id)} : findBy = { id };
+    console.log(findBy)
+    return await postCollection.findOne(findBy, {projection: { _id: 0}});
   }
 
   async create(body: any): Promise<IPost | null> {
@@ -19,12 +22,16 @@ export class PostRepository {
     return await postCollection.findOne({_id: insertedId}, {projection: { _id: 0}})
   }
 
-  async update(id: string, body: any): Promise<boolean> {
-    const { matchedCount } = await postCollection.updateOne({id}, {$set: body});
+  async update(id: string, body: any): Promise<IPost | boolean> {
+    const { matchedCount, upsertedId} = await postCollection.updateOne({id}, {$set: body});
     if(matchedCount === 0){
       return false
     }
-    return true
+    const data = await this.findOne(upsertedId!);
+    if(!data){
+      return false
+    }
+    return data
   }
 
   async delete(id: string): Promise<boolean> {
