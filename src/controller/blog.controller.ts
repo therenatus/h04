@@ -66,11 +66,10 @@ router.post('/:id/posts', CreatePostWithParamValidator(), InputValidationMiddlew
     return res.status(404).send();
   }
   const post = await postService.create(req.body, req.params.id);
-  console.log('pooost', post)
   if(post === false) {
     return res.status(404).send()
   }
-  res.status(201).send();
+  res.status(201).send(post);
 })
 
 router.put('/:id',CreateBlogValidator(), InputValidationMiddleware, async(req: Request, res: Response) => {
@@ -94,7 +93,5 @@ router.delete('/:id',AuthMiddleware, async(req: Request, res: Response) => {
   }
   res.status(204).send();
 });
-
-router.post(':id/posts')
 
 export default router;

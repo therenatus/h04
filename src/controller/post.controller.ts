@@ -5,6 +5,7 @@ import {InputValidationMiddleware} from "../middleware/inputValidationMiddleware
 import {AuthMiddleware} from "../middleware/auth.middleware";
 import {IPaginationResponse} from "../types/blog-response.interface";
 import {IPost} from "../types/post.interface";
+import {CreatePostWithParamValidator} from "./validator/create-post-with-param.validator";
 
 const router = express.Router();
 const service = new PostService();
@@ -41,7 +42,7 @@ router.get('/:id', async(req: Request, res: Response) => {
   res.status(200).send(post);
 });
 
-router.put('/:id',CreatePostValidator(), InputValidationMiddleware, async(req: Request, res: Response) => {
+router.put('/:id',CreatePostWithParamValidator(), InputValidationMiddleware, async(req: Request, res: Response) => {
   if(!req.params.id){
     return res.status(404).send();
   }
@@ -49,7 +50,7 @@ router.put('/:id',CreatePostValidator(), InputValidationMiddleware, async(req: R
   return res.status(204).send(post);
 });
 
-router.delete('/:id',AuthMiddleware, service.delete, async(req: Request, res: Response) => {
+router.delete('/:id',AuthMiddleware, async(req: Request, res: Response) => {
   if(!req.params.id){
     return res.status(404).send();
   }
