@@ -31,7 +31,7 @@ export class PostRepository {
     if(!data){
       return false
     }
-    return data
+    return data;
   }
 
   async delete(id: string): Promise<boolean> {

@@ -42,11 +42,14 @@ router.get('/:id', async(req: Request, res: Response) => {
   res.status(200).send(post);
 });
 
-router.put('/:id',CreatePostWithParamValidator(), InputValidationMiddleware, async(req: Request, res: Response) => {
+router.put('/:id',CreatePostValidator(), InputValidationMiddleware, async(req: Request, res: Response) => {
   if(!req.params.id){
     return res.status(404).send();
   }
   const post = await service.update(req.params.id, req.body);
+  if(!post){
+    return res.status(404).send();
+  }
   return res.status(204).send(post);
 });
 
