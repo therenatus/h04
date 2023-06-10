@@ -9,7 +9,7 @@ export async function FindAllWithCount<T>(query: IQuery, collection: Collection<
   const sortOptions: { [key: string]: any } = {};
   sortOptions[sortBy as string] = sortDirection;
   if (searchNameTerm) {
-    filter = {name: {$regex: searchNameTerm}};
+    filter = {name: {$regex: searchNameTerm, $options: "i"}};
   }
   if(id){
     filter = { blogId: id}
