@@ -26,9 +26,9 @@ export class PostRepository {
   async update(id: string, body: any): Promise<IPost | boolean> {
     const res = await postCollection.findOneAndUpdate({id}, {$set: body}, {returnDocument: 'after'});
     if(!res.ok){
-      return false
+      return false;
     }
-    return res.value as IPost
+    return res.value as IPost;
   }
 
   async delete(id: string): Promise<boolean> {
