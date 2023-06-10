@@ -5,7 +5,7 @@ export const QueryBuilder = (query: any) => {
     term: query.term ? query.term : null,
     pageSize: query.pageSize ? +query.pageSize : 10,
     pageNumber: query.pageNumber ? +query.pageNumber : 1,
-    sortBy: query.sortBy ? query.sortBy : 'asc'
+    sortBy: query.sortBy ? query.sortBy : 'desc'
   }
   return QuerySearch;
 }

@@ -11,9 +11,10 @@ export class PostRepository {
   }
 
   async findOne(id: string | ObjectId): Promise<IPost | null> {
+    console.log("id:", id)
     let findBy: any
-    ObjectId.isValid(id) ? findBy = {_id: new ObjectId(id)} : findBy = { id };
-    console.log(findBy)
+    const a = ObjectId.isValid(id) ? findBy = {_id: new ObjectId(id)} : findBy = { id };
+    console.log(a)
     return await postCollection.findOne(findBy, {projection: { _id: 0}});
   }
 
@@ -23,15 +24,11 @@ export class PostRepository {
   }
 
   async update(id: string, body: any): Promise<IPost | boolean> {
-    const { matchedCount, upsertedId} = await postCollection.updateOne({id}, {$set: body});
-    if(matchedCount === 0){
+    const res = await postCollection.findOneAndUpdate({id}, {$set: body}, {returnDocument: 'after'});
+    if(!res.ok){
       return false
     }
-    const data = await this.findOne(upsertedId!);
-    if(!data){
-      return false
-    }
-    return data;
+    return res.value as IPost
   }
 
   async delete(id: string): Promise<boolean> {

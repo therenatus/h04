@@ -5,7 +5,6 @@ import {InputValidationMiddleware} from "../middleware/inputValidationMiddleware
 import {AuthMiddleware} from "../middleware/auth.middleware";
 import {IPaginationResponse} from "../types/blog-response.interface";
 import {IPost} from "../types/post.interface";
-import {CreatePostWithParamValidator} from "./validator/create-post-with-param.validator";
 
 const router = express.Router();
 const service = new PostService();
