@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/src/helpers/findAllWithCount.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/findAllWithCount.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/query-builder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/query-builder.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/post.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/post.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/query.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/query.interface.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +67,7 @@
       <workItem from="1686276898628" duration="27881000" />
       <workItem from="1686371169347" duration="9000" />
       <workItem from="1686411520926" duration="200000" />
-      <workItem from="1686413102892" duration="2216000" />
+      <workItem from="1686413041607" duration="3631000" />
     </task>
     <servers />
   </component>

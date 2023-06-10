@@ -1,6 +1,6 @@
 export interface IQuery {
-  term: string | null
-  sortBy: directionEnum,
+  searchNameTerm: string | null
+  sortDirection: directionEnum,
   pageNumber: number,
   pageSize: number
 }
