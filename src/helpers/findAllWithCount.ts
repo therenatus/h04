@@ -4,7 +4,7 @@ import {Collection, Document, WithId} from "mongodb";
 
 //@ts-ignore
 export async function FindAllWithCount<T>(query: IQuery, collection: Collection<T>, id: string | null): Promise<TResponseWithData<WithId<T>[], number, 'data', 'totalCount'>> {
-  const {searchNameTerm, sortDirection, pageSize, pageNumber} = query;
+  const {searchNameTerm, sortDirection, pageSize, pageNumber, sortBy} = query;
   let filter = {}
   if (searchNameTerm) {
     filter = {name: {$regex: searchNameTerm}};
@@ -15,7 +15,7 @@ export async function FindAllWithCount<T>(query: IQuery, collection: Collection<
   const total = await collection.countDocuments(filter);
   const data =  await collection
     .find(filter)
-    .sort({createdAt: sortDirection})
+    .sort({sortBy: sortDirection})
     .skip(+pageSize * (pageNumber - 1))
     .limit(+pageSize)
     .toArray();
