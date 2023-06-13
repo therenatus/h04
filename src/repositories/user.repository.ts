@@ -15,7 +15,7 @@ export class UserRepository {
     return userCollection.findOne({$or: [{email: search}, {login: search}]});
   }
   async findOne(id: ObjectId): Promise<IUser | null> {
-    return await userCollection.findOne({_id: new ObjectId(id)}, {projection: { _id: 0}});
+    return await userCollection.findOne({_id: new ObjectId(id)}, {projection: { _id: 0, hashPassword: 0}});
   }
   async create(body: any): Promise<ObjectId> {
     const { insertedId } = await userCollection.insertOne(body);

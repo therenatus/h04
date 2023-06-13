@@ -16,7 +16,7 @@ export async function FindAllWithCount<T>(query: IQuery, collection: Collection<
   }
   const total = await collection.countDocuments(filter);
   const data =  await collection
-    .find(filter)
+    .find(filter, {projection: { hashPassword: 0}})
     .sort(sortOptions)
     .skip(+pageSize * (pageNumber - 1))
     .limit(+pageSize)

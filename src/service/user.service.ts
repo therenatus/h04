@@ -29,9 +29,9 @@ export class UserService {
     const user = {
       id: (+new Date()).toString(),
       hashPassword,
-      salt,
       email: body.email,
-      login: body.login
+      login: body.login,
+      createdAt: new Date()
     }
     const newUserId = await Repository.create(user);
     return await Repository.findOne((newUserId));
