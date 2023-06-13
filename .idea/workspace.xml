@@ -24,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/src/service/blog.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/blog.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/blog.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/blog.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/query.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/query.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +84,7 @@
       <workItem from="1686411520926" duration="200000" />
       <workItem from="1686413041607" duration="20733000" />
       <workItem from="1686622506465" duration="3912000" />
-      <workItem from="1686630536866" duration="14445000" />
+      <workItem from="1686630536866" duration="15238000" />
     </task>
     <servers />
   </component>

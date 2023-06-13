@@ -4,12 +4,18 @@ import {Collection, Document, WithId} from "mongodb";
 
 //@ts-ignore
 export async function FindAllWithCount<T>(query: IQuery, collection: Collection<T>, id: string | null): Promise<TResponseWithData<WithId<T>[], number, 'data', 'totalCount'>> {
-  const {searchNameTerm, sortDirection, pageSize, pageNumber, sortBy} = query;
+  const {searchNameTerm, sortDirection, pageSize, pageNumber, sortBy, searchEmailTerm, searchLoginTerm} = query;
   let filter = {}
   const sortOptions: { [key: string]: any } = {};
   sortOptions[sortBy as string] = sortDirection;
   if (searchNameTerm) {
     filter = {name: {$regex: searchNameTerm, $options: "i"}};
+  }
+  if (searchEmailTerm) {
+    filter = {email: {$regex: searchEmailTerm, $options: "1"}}
+  }
+  if (searchLoginTerm) {
+    filter = {email: {$regex: searchLoginTerm, $options: "1"}}
   }
   if(id){
     filter = { blogId: id };

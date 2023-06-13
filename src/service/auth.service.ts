@@ -6,6 +6,7 @@ const Repository = new UserRepository()
 export class AuthService {
   async login (body: any) {
     const user = await Repository.getOne(body.loginOrEmail);
+    console.log(user)
     if(!user){
       return false;
     }
