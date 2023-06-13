@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2063720-8789-47c0-b947-d2c73ec4545f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/controller/auth.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/user.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/validator/create-user.validator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/hashPassword.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repositories/user.repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/user.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/user.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/blog.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/blog.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/post.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/post.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/validator/create-post-with-param.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/validator/create-post-with-param.validator.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/findAllWithCount.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/findAllWithCount.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/query-builder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/query-builder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/post.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/post.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/query.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/query.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/blog.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/blog.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +80,9 @@
       <workItem from="1686276898628" duration="27881000" />
       <workItem from="1686371169347" duration="9000" />
       <workItem from="1686411520926" duration="200000" />
-      <workItem from="1686413041607" duration="6140000" />
+      <workItem from="1686413041607" duration="20733000" />
+      <workItem from="1686622506465" duration="3912000" />
+      <workItem from="1686630536866" duration="7849000" />
     </task>
     <servers />
   </component>

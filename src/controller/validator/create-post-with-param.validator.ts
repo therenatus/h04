@@ -1,5 +1,4 @@
 import {body} from "express-validator";
-import {blogCollection} from "../../index";
 
 export const CreatePostWithParamValidator = () => {
   return [

@@ -9,6 +9,8 @@ import {IPost} from "../types/post.interface";
 const router = express.Router();
 const service = new PostService();
 
+router.post('*', AuthMiddleware);
+router.put('*', AuthMiddleware);
 router.get('/', async(req: Request, res: Response) => {
   const posts = await service.getAll(req.query);
   const {items, meta} = posts;

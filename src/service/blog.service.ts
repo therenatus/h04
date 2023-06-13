@@ -52,9 +52,6 @@ export class BlogService {
     return { items: data, meta: meta }
   }
 
-  async createPost (body: any) {
-
-  }
   async update(id: string, body: any): Promise<boolean>{
     return await Repository.updateOne(id, body);
   }

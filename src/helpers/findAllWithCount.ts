@@ -12,7 +12,7 @@ export async function FindAllWithCount<T>(query: IQuery, collection: Collection<
     filter = {name: {$regex: searchNameTerm, $options: "i"}};
   }
   if(id){
-    filter = { blogId: id}
+    filter = { blogId: id };
   }
   const total = await collection.countDocuments(filter);
   const data =  await collection

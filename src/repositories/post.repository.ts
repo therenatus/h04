@@ -11,10 +11,8 @@ export class PostRepository {
   }
 
   async findOne(id: string | ObjectId): Promise<IPost | null> {
-    console.log("id:", id)
     let findBy: any
-    const a = ObjectId.isValid(id) ? findBy = {_id: new ObjectId(id)} : findBy = { id };
-    console.log(a)
+    ObjectId.isValid(id) ? findBy = {_id: new ObjectId(id)} : findBy = { id };
     return await postCollection.findOne(findBy, {projection: { _id: 0}});
   }
 

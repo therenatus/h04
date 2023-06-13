@@ -13,6 +13,9 @@ const router = express.Router();
 const service = new BlogService();
 const postService = new PostService();
 
+
+router.post('*', AuthMiddleware);
+router.put('*', AuthMiddleware);
 router.get('/',async(req: Request, res: Response) => {
   const data = await service.getAll(req.query);
   const {items, meta} = data;
@@ -26,7 +29,7 @@ router.get('/',async(req: Request, res: Response) => {
   return res.status(200).send(blogsResponse);
 });
 
-router.post('/',CreateBlogValidator(), InputValidationMiddleware,async(req: Request, res: Response) => {
+router.post('/',CreateBlogValidator(), InputValidationMiddleware, async(req: Request, res: Response) => {
   const blog = await service.create(req.body);
   return res.status(201).send(blog);
 });

@@ -6,6 +6,8 @@ import {AuthMiddleware} from "./middleware/auth.middleware";
 import {MongoClient} from "mongodb";
 import {IBlog} from "./types/blog.interface";
 import {IPost} from "./types/post.interface";
+import {IUser} from './types/user.interface';
+import AuthController from "./controller/auth.controller";
 
 dotenv.config()
 if (!process.env.PORT) {
@@ -22,13 +24,15 @@ if(!mongoURI){
 const client = new MongoClient(mongoURI);
 const blogDB = client.db('blogs');
 const postDB = client.db('posts');
+const userDB = client.db('users');
 
 export const blogCollection = blogDB.collection<IBlog>('blogs');
 export const postCollection = postDB.collection<IPost>("posts");
+export const userCollection = userDB.collection<IUser>('users');
 
 app.use(bodyParser.json());
-app.post('*', AuthMiddleware);
-app.put('*', AuthMiddleware);
+// app.post('*', AuthMiddleware);
+// app.put('*', AuthMiddleware);
 app.use('/api', router);
 
 const start = async() => {
