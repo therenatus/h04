@@ -12,7 +12,7 @@ export async function FindAllWithCount<T>(query: IQuery, collection: Collection<
   const orConditions = [];
 
   if (searchNameTerm) {
-    orConditions.push({ name: { $regex: searchNameTerm, $options: "i" } });
+    filter.name = { $regex: searchNameTerm, $options: "i" };
   }
 
   if (searchEmailTerm) {
