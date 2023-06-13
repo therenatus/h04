@@ -17,6 +17,7 @@
       <change beforePath="$PROJECT_DIR$/src/controller/validator/create-post-with-param.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/validator/create-post-with-param.validator.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/validator/create-user.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/validator/create-user.validator.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/findAllWithCount.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/findAllWithCount.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/query-builder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/query-builder.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/post.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/post.repository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/user.repository.ts" afterDir="false" />
@@ -84,7 +85,7 @@
       <workItem from="1686411520926" duration="200000" />
       <workItem from="1686413041607" duration="20733000" />
       <workItem from="1686622506465" duration="3912000" />
-      <workItem from="1686630536866" duration="15335000" />
+      <workItem from="1686630536866" duration="16293000" />
     </task>
     <servers />
   </component>

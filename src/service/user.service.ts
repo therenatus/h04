@@ -10,6 +10,7 @@ import {generateHash} from "../helpers/hashPassword";
 const Repository = new UserRepository();
 export class UserService {
   async getAll(query: any): Promise<TResponseWithData<IUser[], TMeta, 'items', 'meta'>> {
+    console.log(query)
     const querySearch = QueryBuilder(query);
     const meta: TMeta = {
       ...querySearch,
