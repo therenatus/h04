@@ -15,7 +15,7 @@ export async function FindAllWithCount<T>(query: IQuery, collection: Collection<
     filter = {email: {$regex: searchEmailTerm, $options: "1"}}
   }
   if (searchLoginTerm) {
-    filter = {email: {$regex: searchLoginTerm, $options: "1"}}
+    filter = {login: {$regex: searchLoginTerm, $options: "1"}}
   }
   if(id){
     filter = { blogId: id };
