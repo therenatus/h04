@@ -14,17 +14,20 @@ export async function FindAllWithCount<T>(query: IQuery, collection: Collection<
     filter.name = { $regex: searchNameTerm, $options: "i" };
   }
 
-  if (searchEmailTerm || searchLoginTerm) {
-    if (searchLoginTerm) {
-      orConditions.push({ login: { $regex: searchLoginTerm, $options: "i" } });
-    }
-    if (searchEmailTerm) {
-      orConditions.push({ email: { $regex: searchEmailTerm, $options: "i" } });
-    }
+  if (searchEmailTerm) {
+    orConditions.push({ email: { $regex: searchEmailTerm, $options: "i" } });
+  }
+
+  if (searchLoginTerm) {
+    orConditions.push({ login: { $regex: searchLoginTerm, $options: "i" } });
   }
 
   if (orConditions.length > 0) {
     filter.$or = orConditions;
+  }
+
+  if(id) {
+    filter.blogId = id;
   }
   const total = await collection.countDocuments(filter);
   const data =  await collection
