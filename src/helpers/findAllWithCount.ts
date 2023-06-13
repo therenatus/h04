@@ -9,17 +9,22 @@ export async function FindAllWithCount<T>(query: IQuery, collection: Collection<
   let filter: any = {}
   const sortOptions: { [key: string]: any } = {};
   sortOptions[sortBy as string] = sortDirection;
+  const orConditions = [];
+
   if (searchNameTerm) {
-    filter.name = {$regex: searchNameTerm, $options: "i"};
+    orConditions.push({ name: { $regex: searchNameTerm, $options: "i" } });
   }
+
   if (searchEmailTerm) {
-    filter.email = {$regex: searchEmailTerm, $options: "i"};
+    orConditions.push({ email: { $regex: searchEmailTerm, $options: "i" } });
   }
+
   if (searchLoginTerm) {
-    filter.login = {$regex: searchLoginTerm, $options: "i"};
+    orConditions.push({ login: { $regex: searchLoginTerm, $options: "i" } });
   }
-  if(id){
-    filter = { blogId: id };
+
+  if (orConditions.length > 0) {
+    filter.$or = orConditions;
   }
   console.log(filter)
   const total = await collection.countDocuments(filter);
