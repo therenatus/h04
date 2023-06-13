@@ -7,8 +7,6 @@
     <list default="true" id="f2063720-8789-47c0-b947-d2c73ec4545f" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/controller/user.controller.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/controller/validator/login.validator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/hashPassword.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/auth.service.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/types/user.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -22,8 +20,10 @@
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/post.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/post.repository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/user.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/blog.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/blog.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/blog.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/blog.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +83,7 @@
       <workItem from="1686411520926" duration="200000" />
       <workItem from="1686413041607" duration="20733000" />
       <workItem from="1686622506465" duration="3912000" />
-      <workItem from="1686630536866" duration="12006000" />
+      <workItem from="1686630536866" duration="14445000" />
     </task>
     <servers />
   </component>

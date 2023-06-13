@@ -24,8 +24,10 @@ export class UserService {
   }
 
   async create(body: any) {
+    console.log(body)
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await generateHash(body.password, salt);
+    console.log(hashPassword)
     const user = {
       id: (+new Date()).toString(),
       hashPassword,

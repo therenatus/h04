@@ -5,12 +5,12 @@ import {generateHash} from "../helpers/hashPassword";
 const Repository = new UserRepository()
 export class AuthService {
   async login (body: any) {
-    const user = await Repository.getOne(body.login);
+    const user = await Repository.getOne(body.loginOrEmail);
     if(!user){
       return false;
     }
-    const hashPassword = await generateHash(body.password, bcrypt.genSaltSync(10));
-    if(hashPassword !== user.hashPassword){
+    const validPassword = await compare(body.password, user.hashPassword);
+    if(!validPassword){
       return false;
     }
     return true;
