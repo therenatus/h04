@@ -5,45 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2063720-8789-47c0-b947-d2c73ec4545f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/comment.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/dto/create-blog.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/dto/create-comment.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/dto/create-post.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/dto/create-user.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/validator/create-comment.validator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/comment-user-mapping.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/jwtService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/middleware/basicAuth.middleware.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repositories/comment.repository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repositories/query/blog-query.repository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repositories/query/comment-query.repository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/comment.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/URIParams.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/comment.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/request.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/status.enum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/data-with-pagination.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/auth.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/blog.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/blog.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/comment.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/comment.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/post.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/post.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/validator/create-blog.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/validator/create-blog.validator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/validator/create-post-with-param.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/validator/create-post-with-param.validator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/validator/create-post.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/validator/create-post.validator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/validator/create-user.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/validator/create-user.validator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/validator/login.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/validator/login.validator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware/auth.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/auth.middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/query/comment-query.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/query/comment-query.repository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/user.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/post.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/post.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/blog-response.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/pagination-response.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/user.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/user.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +96,7 @@
       <workItem from="1688527154077" duration="14332000" />
       <workItem from="1688568127401" duration="599000" />
       <workItem from="1688610854709" duration="12367000" />
-      <workItem from="1688659328305" duration="4266000" />
+      <workItem from="1688659328305" duration="12781000" />
     </task>
     <servers />
   </component>

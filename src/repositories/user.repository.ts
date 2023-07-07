@@ -23,7 +23,6 @@ export class UserRepository {
     if(!ObjectId.isValid(id)){
       filter = {id: id}
     }
-
     return await userCollection.findOne(filter, {projection: { _id: 0, hashPassword: 0}});
   }
   async create(body: any): Promise<ObjectId> {

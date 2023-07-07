@@ -2,11 +2,13 @@ import express, {Request, Response} from 'express';
 import {AuthMiddleware} from "../middleware/auth.middleware";
 import {CommentService} from "../service/comment.service";
 import {StatusEnum} from "../types/status.enum";
+import {CreateCommentValidator} from "./validator/create-comment.validator";
+import {InputValidationMiddleware} from "../middleware/inputValidationMiddleware";
 
 const router = express.Router();
 const service = new CommentService();
 
-router.put('/:id', AuthMiddleware, async(req: Request, res: Response) => {
+router.put('/:id', CreateCommentValidator, InputValidationMiddleware, AuthMiddleware, async(req: Request, res: Response) => {
   if(!req.params.id){
     return res.status(404).send();
   }

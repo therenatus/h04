@@ -12,6 +12,7 @@ import {RequestType} from "../types/request.type";
 import {URIParamsInterface} from "../types/URIParams.interface";
 import {IQuery} from "../types/query.interface";
 import {ICreateBlogDto} from "./dto/create-blog.dto";
+import {DataWithPagination} from "../helpers/data-with-pagination";
 
 const router = express.Router();
 const service = new BlogService();
@@ -23,6 +24,7 @@ router.put('*', BasicAuthMiddleware);
 router.get('/',async(req: RequestType<{}, {}, IQuery>, res: Response<IPaginationResponse<IBlog[]>>) => {
   const data = await service.getAll(req.query);
   const {items, meta} = data;
+
   const blogsResponse: IPaginationResponse<IBlog[]> = {
     pageSize: meta.pageSize,
     page: meta.pageNumber,

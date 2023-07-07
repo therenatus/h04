@@ -80,7 +80,7 @@ router.post('/:id/comments', CreateCommentValidator, InputValidationMiddleware, 
   if(!comment){
     return res.status(404).send()
   }
-  res.status(200).send(comment);
+  res.status(201).send(comment);
 });
 
 router.get('/:id/comments', async(req: Request, res: Response) => {
