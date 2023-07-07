@@ -3,12 +3,18 @@ import {CommentUserMapping} from "../helpers/comment-user-mapping";
 import {CommentRepository} from "../repositories/comment.repository";
 import {UserRepository} from "../repositories/user.repository";
 import {StatusEnum} from "../types/status.enum";
+import {PostRepository} from "../repositories/post.repository";
 
 const commentRepository = new CommentRepository();
 const userRepository = new UserRepository();
+const postRepository = new PostRepository();
 
 export class CommentService {
   async  createComment(postId: string, body: any, userId: string): Promise<ICommentResponse | boolean> {
+    const post = await postRepository.findOne(postId);
+    if(!post){
+      return false;
+    }
     const author = await userRepository.findOneById(userId);
     if(!author){
       return false;
