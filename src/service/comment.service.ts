@@ -57,11 +57,11 @@ export class CommentService {
     if(comment === null){
       return StatusEnum.NOT_FOUND;
     }
-    if(comment.commentatorId === userId){
+    if(comment.commentatorId !== userId){
       return StatusEnum.FORBIDDEN;
     }
     const deletedComment = await commentRepository.deleteComment(id);
-    if(deletedComment === StatusEnum.NOT_FOUND){
+    if(!deletedComment){
       return StatusEnum.NOT_FOUND;
     }
     return StatusEnum.NOT_CONTENT;

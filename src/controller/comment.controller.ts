@@ -37,7 +37,10 @@ router.delete('/:id', AuthMiddleware, async(req: Request, res: Response) => {
   if(!req.params.id){
     return res.status(404).send();
   }
-  const comment = await service.deleteOne(req.params.id, req.userId!);
+  if(!req.userId){
+    return res.status(403).send();
+  }
+  const comment = await service.deleteOne(req.params.id, req.userId);
   if(comment === StatusEnum.FORBIDDEN){
     return res.status(StatusEnum.FORBIDDEN).send();
   }

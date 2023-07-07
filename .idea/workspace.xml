@@ -10,8 +10,10 @@
       <change beforePath="$PROJECT_DIR$/src/controller/blog.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/blog.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/comment.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/comment.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/post.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/post.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/comment.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/comment.repository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/query/comment-query.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/query/comment-query.repository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/user.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/comment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/comment.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/post.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/post.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +98,7 @@
       <workItem from="1688527154077" duration="14332000" />
       <workItem from="1688568127401" duration="599000" />
       <workItem from="1688610854709" duration="12367000" />
-      <workItem from="1688659328305" duration="12781000" />
+      <workItem from="1688659328305" duration="14685000" />
     </task>
     <servers />
   </component>

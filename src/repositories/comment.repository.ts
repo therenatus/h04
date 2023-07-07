@@ -20,11 +20,11 @@ export class CommentRepository {
     return StatusEnum.NOT_FOUND;
   }
 
-  async deleteComment(id: string): Promise<StatusEnum>{
+  async deleteComment(id: string): Promise<boolean>{
     const { deletedCount } = await commentCollection.deleteOne({ id });
     if (deletedCount === 0) {
-      return StatusEnum.NOT_FOUND;
+      return false;
     }
-    return StatusEnum.NOT_CONTENT;
+    return true;
   }
 }
