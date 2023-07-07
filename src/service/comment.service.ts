@@ -53,7 +53,7 @@ export class CommentService {
   }
 
   async deleteOne(id: string, userId: string): Promise<StatusEnum> {
-    const comment = await commentRepository.findOne(userId);
+    const comment = await commentRepository.findOne(id);
     if(comment === null){
       return StatusEnum.NOT_FOUND;
     }
