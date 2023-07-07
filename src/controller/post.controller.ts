@@ -69,7 +69,7 @@ router.delete('/:id',BasicAuthMiddleware, async(req: Request, res: Response) => 
   res.status(204).send();
 });
 
-router.post('/:id/comments', CreateCommentValidator, InputValidationMiddleware, AuthMiddleware, async(req: Request, res: Response) => {
+router.post('/:id/comments', AuthMiddleware, CreateCommentValidator, InputValidationMiddleware, async(req: Request, res: Response) => {
   if(!req.params.id){
     return res.status(404).send();
   }
@@ -88,8 +88,7 @@ router.get('/:id/comments', async(req: Request, res: Response) => {
     return res.status(404).send();
   }
 
-  const comment = await CommentQueryRepository({  query: req.query,
-    postId: req.params.id});
+  const comment = await CommentQueryRepository({  query: req.query, postId: req.params.id});
   if(!comment) {
     return res.status(404).send()
   }
