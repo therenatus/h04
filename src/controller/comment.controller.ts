@@ -8,7 +8,7 @@ import {InputValidationMiddleware} from "../middleware/inputValidationMiddleware
 const router = express.Router();
 const service = new CommentService();
 
-router.put('/:id', CreateCommentValidator, InputValidationMiddleware, AuthMiddleware, async(req: Request, res: Response) => {
+router.put('/:id', AuthMiddleware, CreateCommentValidator, InputValidationMiddleware, async(req: Request, res: Response) => {
   if(!req.params.id){
     return res.status(404).send();
   }

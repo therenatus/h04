@@ -38,7 +38,7 @@ export class CommentService {
     }
     const newComment = await commentRepository.update(id, body);
     if(!newComment){
-      return StatusEnum.FORBIDDEN
+      return StatusEnum.NOT_FOUND;
     }
     return StatusEnum.NOT_CONTENT;
   }
