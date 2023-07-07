@@ -14,6 +14,9 @@ router.put('/:id', CreateCommentValidator, InputValidationMiddleware, AuthMiddle
   }
   const comment = await service.update(req.body, req.params.id, req.userId!);
   if(comment === StatusEnum.NOT_FOUND ){
+    return res.status(StatusEnum.NOT_FOUND).send();
+  }
+  if(comment === StatusEnum.FORBIDDEN ){
     return res.status(StatusEnum.FORBIDDEN).send();
   }
   if(comment === StatusEnum.UNAUTHORIZED ){

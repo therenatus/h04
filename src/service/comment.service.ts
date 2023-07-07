@@ -36,7 +36,11 @@ export class CommentService {
     if(comment.commentatorId !== userId){
       return StatusEnum.FORBIDDEN;
     }
-    return await commentRepository.update(id, body);
+    const newComment = await commentRepository.update(id, body);
+    if(!newComment){
+      return StatusEnum.FORBIDDEN
+    }
+    return StatusEnum.NOT_CONTENT;
   }
 
   async getOne(id: string): Promise<ICommentResponse | StatusEnum> {

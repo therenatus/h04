@@ -12,12 +12,12 @@ export class CommentRepository {
     return await commentCollection.findOne({ _id: insertedId}, {projection: {_id: 0, postId: 0}})
   }
 
-  async update(id: string, data: IComment): Promise<StatusEnum> {
+  async update(id: string, data: IComment): Promise<boolean> {
     const {matchedCount} = await commentCollection.updateOne({ id: id }, { $set: data });
-    if(matchedCount === 1){
-      return StatusEnum.NOT_CONTENT;
+    if(matchedCount === 0){
+      return false
     }
-    return StatusEnum.NOT_FOUND;
+    return true
   }
 
   async deleteComment(id: string): Promise<boolean>{
