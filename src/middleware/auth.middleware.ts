@@ -1,24 +1,23 @@
 import {NextFunction, Request, Response} from "express";
+import {JwtService} from "../helpers/jwtService";
 
-const validUsername = 'admin';
-const validPassword = 'qwerty';
-export const AuthMiddleware = (req: Request, res: Response, next: NextFunction) => {
-  const authHeader = req.headers.authorization;
-  if (authHeader && authHeader.startsWith('Basic ')) {
-    try{
-      const credentials = atob(authHeader.slice(6));
-      const [username, password] = credentials.split(':');
+const jwtService = new JwtService()
 
-      if (username === validUsername && password === validPassword) {
-        return next();
-      }else {
-        res.status(401).send('Invalid Token');
-      }
-    } catch{
-      res.status(401).send('Invalid Token');
-    }
-
+export const AuthMiddleware = async(req: Request, res: Response, next: NextFunction) => {
+  const auth = req.headers.authorization;
+  if(!auth){
+    res.status(401).send("forbiden 2");
+    return ;
   }
-  res.setHeader('WWW-Authenticate', 'Basic realm="Authentication Required"');
-  res.status(401).send('Authentication Required');
+  const token = auth.split(' ')[1];
+  if(!token){
+    return res.status(401).send("Forbidden");
+  }
+  const userId = await jwtService.getUserByToken(token);
+  console.log(userId)
+  if(!userId){
+    return res.status(401).send("Forbidden");
+  }
+  req.userId = userId.id;
+  next()
 }

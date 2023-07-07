@@ -1,12 +1,12 @@
 import {UserRepository} from "../repositories/user.repository";
-import bcrypt, {compare} from "bcrypt";
-import {generateHash} from "../helpers/hashPassword";
+import {compare} from "bcrypt";
+import {IUser} from "../types/user.interface";
+import {ObjectId} from "mongodb";
 
 const Repository = new UserRepository()
 export class AuthService {
-  async login (body: any) {
+  async login (body: any): Promise<IUser | boolean> {
     const user = await Repository.getOne(body.loginOrEmail);
-    console.log(user)
     if(!user){
       return false;
     }
@@ -14,6 +14,14 @@ export class AuthService {
     if(!validPassword){
       return false;
     }
-    return true;
+    return user;
+  }
+
+  async getMe(userID: string | ObjectId): Promise<IUser | boolean> {
+    const me = await Repository.findOneById(userID);
+    if(!me){
+      return false
+    }
+    return me;
   }
 }

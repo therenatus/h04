@@ -3,8 +3,12 @@ import {PostRepository} from "../repositories/post.repository";
 import {BlogRepository} from '../repositories/blog.repository'
 import {QueryBuilder} from "../helpers/query-builder";
 import {TMeta} from "../types/meta.type";
-import {Document} from "mongodb";
+import {Document, ObjectId} from "mongodb";
 import {TResponseWithData} from "../types/respone-with-data.type";
+import {CommentRepository} from "../repositories/comment.repository";
+import {IComment} from "../types/comment.interface";
+import {UserRepository} from "../repositories/user.repository";
+import {CommentUserMapping} from "../helpers/comment-user-mapping";
 
 const Repository = new PostRepository();
 const blogRepository = new BlogRepository();
@@ -33,7 +37,7 @@ export class PostService {
     const blog = await blogRepository.findOne(id ? id : body.blogId);
     if(!blog){
       return false;
-    }
+     }
     body.blogName = blog.name;
     body.createdAt = date;
     body.blogId = blog.id;

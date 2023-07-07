@@ -2,12 +2,12 @@ import express, {Express} from "express";
 import dotenv from 'dotenv'
 import bodyParser from "body-parser";
 import router from "./controller";
-import {AuthMiddleware} from "./middleware/auth.middleware";
 import {MongoClient} from "mongodb";
 import {IBlog} from "./types/blog.interface";
 import {IPost} from "./types/post.interface";
 import {IUser} from './types/user.interface';
 import AuthController from "./controller/auth.controller";
+import {IComment} from "./types/comment.interface";
 
 dotenv.config()
 if (!process.env.PORT) {
@@ -25,10 +25,12 @@ const client = new MongoClient(mongoURI);
 const blogDB = client.db('blogs');
 const postDB = client.db('posts');
 const userDB = client.db('users');
+const commentDB = client.db('comment');
 
 export const blogCollection = blogDB.collection<IBlog>('blogs');
 export const postCollection = postDB.collection<IPost>("posts");
 export const userCollection = userDB.collection<IUser>('users');
+export const commentCollection = commentDB.collection<IComment>("comment");
 
 app.use(bodyParser.json());
 // app.post('*', AuthMiddleware);

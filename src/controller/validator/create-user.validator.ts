@@ -1,8 +1,7 @@
 import {body} from "express-validator";
 import {blogCollection, userCollection} from "../../index";
 
-export const CreateUserValidator = () => {
-  return [
+export const CreateUserValidator = [
     body('login').trim().isString().isLength({min: 3, max: 10}).custom(async(login) => {
       const user = await userCollection.findOne({login: login});
       if(user) {
@@ -18,5 +17,4 @@ export const CreateUserValidator = () => {
       }
       return true;
     })
-  ]
-}
+]

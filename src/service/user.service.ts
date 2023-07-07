@@ -10,7 +10,6 @@ import {generateHash} from "../helpers/hashPassword";
 const Repository = new UserRepository();
 export class UserService {
   async getAll(query: any): Promise<TResponseWithData<IUser[], TMeta, 'items', 'meta'>> {
-    console.log(query)
     const querySearch = QueryBuilder(query);
     const meta: TMeta = {
       ...querySearch,
@@ -24,11 +23,9 @@ export class UserService {
     return { items: data, meta: meta }
   }
 
-  async create(body: any) {
-    console.log(body)
+  async create(body: any): Promise<IUser | null> {
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await generateHash(body.password, salt);
-    console.log(hashPassword)
     const user = {
       id: (+new Date()).toString(),
       hashPassword,
@@ -37,10 +34,10 @@ export class UserService {
       createdAt: new Date()
     }
     const newUserId = await Repository.create(user);
-    return await Repository.findOne((newUserId));
+    return await Repository.findOneById(newUserId);
   }
 
-  async delete(id: string) {
+  async delete(id: string): Promise<boolean> {
     return await Repository.delete(id)
   }
 }

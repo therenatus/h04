@@ -1,7 +1,6 @@
 import express, { Request, Response} from "express";
 import {UserService} from "../service/user.service";
-import {IPaginationResponse} from "../types/blog-response.interface";
-import {IPost} from "../types/post.interface";
+import {IPaginationResponse} from "../types/pagination-response.interface";
 import {IUser} from "../types/user.interface";
 import {CreateUserValidator} from "./validator/create-user.validator";
 import {InputValidationMiddleware} from "../middleware/inputValidationMiddleware";
@@ -20,7 +19,7 @@ router.get('/', async(req: Request, res: Response) => {
   }
   res.status(200).send(users);
 });
-router.post('/', CreateUserValidator(), InputValidationMiddleware, async(req: Request, res: Response) => {
+router.post('/', CreateUserValidator, InputValidationMiddleware, async(req: Request, res: Response) => {
   const user = await service.create(req.body);
   res.status(201).send(user);
 });
