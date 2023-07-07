@@ -90,6 +90,9 @@ router.get('/:id/comments', async(req: Request, res: Response) => {
 
   const comment = await CommentQueryRepository({  query: req.query,
     postId: req.params.id});
+  if(!comment) {
+    return res.status(404).send()
+  }
   res.status(200).send(comment)
 
 })

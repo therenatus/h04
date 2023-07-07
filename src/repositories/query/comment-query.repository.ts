@@ -4,14 +4,20 @@ import {UserRepository} from "../user.repository";
 import {QueryBuilder} from "../../helpers/query-builder";
 import {TMeta} from "../../types/meta.type";
 import {DataWithPagination} from "../../helpers/data-with-pagination";
+import {PostRepository} from "../post.repository";
 
 const userRepository = new UserRepository();
+const postRepository = new PostRepository();
 
 type Props = {
   query: any,
   postId: string
 }
 export const CommentQueryRepository = async({query, postId}: Props) => {
+  const post = await postRepository.findOne(postId);
+  if(!post){
+    return false;
+  }
   const querySearch = QueryBuilder(query);
   const meta: TMeta = {
     ...querySearch,
